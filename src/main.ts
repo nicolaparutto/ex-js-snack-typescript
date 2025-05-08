@@ -31,13 +31,20 @@ type Dipendente = {
   readonly emailAziendale: "azienda@gmail.com",
   contratto: "indeterminato" | "determinato" | "freelance"
 }
-const dipendente1: Dipendente = {
-  nome: "Mario",
-  cognome: "Rossi",
-  annoNascita: 2000,
-  sesso: "m",
-  anniDiServizio: [2023, 2024, 2025],
-  emailAziendale: "azienda@gmail.com",
-  contratto: "indeterminato"
-}
 // 🏆Snack 3:
+type Developer = {
+  livelloEsperienza: "Junior" | "Mid" | "Senior",
+  linguaggi?: string[],
+  certificazioni: string[]
+}
+type ProjectManager = {
+  teamSize: null | string[],
+  budgetGestito?: number,
+  stakeholderPrincipali: string[]
+}
+type Team = {
+  nome: string,
+  progettoAttuale: null | string,
+  budget: number,
+  membri: [ProjectManager, ...Developer[]]
+}
