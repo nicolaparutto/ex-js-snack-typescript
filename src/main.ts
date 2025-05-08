@@ -22,4 +22,22 @@ if (valore === null) {
 }
 
 // 🏆Snack 2:
+type Dipendente = {
+  nome: string,
+  cognome: string,
+  annoNascita: number,
+  sesso: "m" | "f",
+  anniDiServizio: number[]
+  readonly emailAziendale: "azienda@gmail.com",
+  contratto: "indeterminato" | "determinato" | "freelance"
+}
+const dipendente1: Dipendente = {
+  nome: "Mario",
+  cognome: "Rossi",
+  annoNascita: 2000,
+  sesso: "m",
+  anniDiServizio: [2023, 2024, 2025],
+  emailAziendale: "azienda@gmail.com",
+  contratto: "indeterminato"
+}
 // 🏆Snack 3:
