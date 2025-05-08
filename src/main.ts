@@ -16,7 +16,7 @@ if (valore === null) {
 } else if (typeof valore === "number") {
   console.log("Stampo il numero moltiplicato per 2:", valore * 2)
 } else if (typeof valore === "boolean") {
-  valore === true ? console.log("È true, quindi stampo: Si") : console.log("È false, quindi stampo: No")
+  console.log(valore ? "È true, quindi stampo: Si" : "È false, quindi stampo: No")
 } else {
   console.log("Tipo non supportato")
 }
@@ -28,23 +28,25 @@ type Dipendente = {
   annoNascita: number,
   sesso: "m" | "f",
   anniDiServizio: number[]
-  readonly emailAziendale: "azienda@gmail.com",
+  readonly emailAziendale: string,
   contratto: "indeterminato" | "determinato" | "freelance"
 }
+
 // 🏆Snack 3:
-type Developer = {
+type Developer = Dipendente & {
   livelloEsperienza: "Junior" | "Mid" | "Senior",
   linguaggi?: string[],
   certificazioni: string[]
 }
-type ProjectManager = {
-  teamSize: null | string[],
+type ProjectManager = Dipendente & {
+  teamSize: null | number,
   budgetGestito?: number,
   stakeholderPrincipali: string[]
 }
+
 type Team = {
   nome: string,
   progettoAttuale: null | string,
   budget: number,
-  membri: [ProjectManager, ...Developer[]]
+  membri: [ProjectManager, Developer, ...Developer[]]
 }
